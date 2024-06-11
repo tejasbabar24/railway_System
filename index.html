@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="javaprohect.css">
+</head>
+<body>
+      <header class="header">
+        <img src="IRCTC-Logo.png" alt="" id="irctclogo" style="height: 90px;">
+        <a href="#" class="logo"></a> 
+  
+        <i class="bx bx-menu" id="menu_icon"></i>
+  
+        <nav class="navbar">
+          <a href="#Login" class="active"  >Home</a>
+          <a href="userRegister.html">User Register</a>
+          <a href="Trains_info.html">Trains</a>
+          <a href="#contact">About IRCTC</a>
+    
+          <marquee behavior="slide" direction="right">Hey ! Welcome to Indian Railway</marquee>
+        </nav>
+        <img src="indian-railways-logo-AF2FECA375-seeklogo.com.png" alt="" style="height: 90px;     padding-left: 15rem;">
+        
+      </header>
+
+      
+    <div class="main_div">
+          <h3>Login Section</h3><br>
+       <div class="main_service">
+          <div class="buttons">
+          <button class="login"></button>
+          <button class="tclogin"> </button>
+        </div>
+          <div class="names">
+            <h5>User login </h5>
+            <h5>TC login </h5>
+          </div>
+      </div>
+          
+    </div>
+    
+
+    <script>
+      
+      const loginButton = document.querySelector('.login');
+      const tcLoginButton = document.querySelector('.tclogin');
+      
+      
+      loginButton.addEventListener('click', () => {
+        window.location.href = 'userlogin.html';
+      });
+
+      tcLoginButton.addEventListener('click', () => {
+        window.location.href = 'tclogin.html';
+      });
+
+     
+    </script>
+    
+
+    </section>
+</body>
+</html>

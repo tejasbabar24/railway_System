@@ -1,0 +1,185 @@
+body {
+    background-image: url('vandeBharat.webp');
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    background-color: aliceblue;
+  }
+  
+  nav {
+    margin-right: 5rem;
+    font-size: 1.5rem;
+    gap: 10cm;
+  }
+  
+  nav a {
+    padding-left: 3cm;
+    padding-bottom: 0.8rem;
+    transition: transform 0.3s ease;
+    color: black;
+    text-decoration: none;
+  }
+  nav a:hover {
+    color: var(--main-color);
+    transform: translateY(10%);
+  }
+  
+  marquee {
+    font-size: 15px;
+  }
+  
+  :root {
+    --main-color: #0ef;
+
+    --second-bg-color: #323946; /* Define the variable for background color */
+  }
+  
+  .main_div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem 2rem 4rem;
+    border-radius: 2rem;
+    text-align: center;
+    margin-left: 20%;
+  }
+  
+  .main_service {
+    display: flex;
+    flex-direction: column;
+    width: 25rem;
+    height: 10rem;
+    border: 3px solid;
+    border-radius: 10%;
+    background-color: rgba(50, 57, 70, 0.4);
+    margin-left: 35rem; 
+    
+  }
+  .buttons{
+    display: flex;
+  }
+  .names{
+    display: flex;
+    flex-direction: row;
+    color: white;
+    font-size: 35px;
+    justify-content: space-between;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-bottom: 100px;
+
+  }
+  
+  
+  input{
+    
+    height: 25px;
+    width: 12rem;
+  }
+  span{
+    font-size: 1.5rem;
+  }
+  .login,
+  .tclogin {
+    margin: 10px;
+      background-image: url("userprofile.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 110px; /* Adjust the height as needed */
+      width: 150px; /* Adjust the width as needed */
+      border-radius: 60%; /* For circular buttons */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      margin-bottom: 1%;
+      margin-right: 10%;
+      margin-left: 12%;
+      transition: transform 0.3s ease;
+  }
+  .tclogin {
+    background-image: url("policeman.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .main_service button:hover{
+    transform: translateY(10%);
+    transform: scale(1.1);
+  }
+  .main_div h3{
+    font-size: 3rem;
+    margin-left: 30%;
+  }
+
+
+  .login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    margin-left: 60%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(50, 57, 70, 0.3); /* Background color for the container */
+}
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color:white;
+    font-size: 35px;
+
+
+}
+.input-group {
+    margin-bottom: 15px;
+}
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 25px;
+    color:white;
+    margin-left: 2rem;
+}
+.input-group input {
+    width: 80%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-left: 2rem;
+
+}
+.input-group input:focus {
+    outline: none;
+    border-color: #3498db;
+}
+.input-group .fa {
+    margin-right: 5px;
+}
+button[type="submit"] {
+    display: block;
+    width: 50%;
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: 6.5rem;
+
+}
+button[type="submit"]:hover {
+   
+  background-color: #2980b9;
+}
+.cont{
+display: flex;
+align-content: center;
+text-align: center;
+}

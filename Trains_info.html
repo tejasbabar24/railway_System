@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train and Station Data</title>
+    <style>
+        body{
+            color:white;
+            background-color:rgb(26, 25, 25);
+        }
+        table { 
+            margin-top: 5rem    ;
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: red;
+            color: white;
+            height: 2rem;
+            font-size: 20px;
+        }
+        td{
+            height: 1rem;
+
+            background-color: black;
+            color: lime;
+        }
+        .cont{
+            display: flex;
+            align-content:space-between;
+            text-align: center;
+            align-items: center ;
+            justify-content: center;
+            flex-direction: column;
+            }
+            h1{
+                margin-left: 35%;
+                font-size: 45px;
+                font-family:Georgia, 'Times New Roman', Times, serif;
+            }
+            h3{
+                font-size: 35px;
+                font-weight: 500;
+            }
+            select{
+                height: 2rem;
+                width: 15rem;
+            }
+                </style>
+</head>
+<body>
+    
+    <h1>Trains and Station Data</h1>
+    <div class="cont">
+    <h3>Select Station </h3>
+    <form action="" ></form>
+    <label for="Station_val"></label>
+                <select name="Station_val" id="Station_val"> 
+                    <option value="selecting">Select station</option>    
+                      <option value="Dadar">Dadar</option>
+                      <option value="Churchgate">Churchgate</option>
+                      <option value="Malad">Malad</option>
+                      <option value="Andheri">Andheri</option>
+                      <option value="Borivali">Borivali</option>
+                    <option value="Goregaon">Goregaon</option>
+                    <option value="Kandivali">Kandivali</option>
+                    <option value="Vile Parle">Vile Parle</option>
+                    <option value="Virar">Virar</option>
+                    <option value="Nalasopara">Nalasopara</option>
+                    <option value="Mira Road">Mira Road</option>
+                    <option value="Bhayandar">Bhayandar</option>
+                    <option value="Dahisar">Dahisar</option>
+                    <option value="Bhayander">Bhayander</option>
+                    <option value="Bandra">Bandra</option>
+                    <option value="Thane">Thane</option>
+                    <option value="Kalyan">Kalyan</option>
+                    <option value="Vashi">Vashi</option>
+                    <option value="Panvel">Panvel</option>
+                    </optgroup>
+                </select>
+            </div>
+        
+    <table id="trainTable">
+        <thead>
+            <tr>
+                <th>Train Name</th>
+                <th>Train Number</th>
+                <th>Departure Station</th>
+                <th>Arrival Station</th>
+                <th>Departure Time</th>
+                <th>Arrival Time </th>
+            </tr>
+        </thead>
+        <tbody id="trainData">
+            <!-- Data will be populated dynamically -->
+        </tbody>
+    </table>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="railmain.js"></script>
+</body>
+</html>

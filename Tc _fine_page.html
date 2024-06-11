@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Collector Fine</title>
+    <script type="module" src="FinesDatabase.js"></script>
+    <style>
+        /* Reset styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-color: #1f242d;
+            --second-bg-color: #323946;
+            --text-color: #fff;
+            --main-color: #0ef;
+        }
+
+        body {
+            
+            font-family: Arial, sans-serif;
+            background-image: url('vecteezy_bangladesh-padma-bridge-illustration_9262628.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 1rem;
+
+        }
+        :root {
+            --bg-color: #1f242d;
+            --second-bg-color: #323946;
+            --text-color: #fff;
+            --main-color: #0ef;
+        }
+
+        html {
+            font-size: 62.5%;
+            overflow-x: hidden;
+        }
+
+        body {
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 0.9rem 9%;
+            background: var(--bg-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            transition: background-color 0.3s ease;
+        }
+
+        .header.sticky {
+            border-bottom: .1rem solid rgba(0, 0, 0, .2);
+        }
+
+        .header h3 {
+            font-size: 3.5rem;
+            color: var(--text-color);
+            font-weight: 600;
+            cursor: default;
+        }
+
+        .navbar a {
+            font-size: 1.7rem;
+            color: var(--text-color);
+            margin-left: 1rem;
+            text-decoration: none;
+            margin-right: 3rem;
+            border-bottom: 3px solid transparent; /* Set initial border color */
+            transition: border-color 0.3s ease, transform 0.3s ease; /* Add transform transition */
+        }
+
+        .navbar {
+            margin-right: 20rem;
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: var(--main-color);
+            border-color: var(--main-color);
+            transform: translateY(-10px); /* Move text up by 3 pixels on hover */
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 1200px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 5px;
+            padding: 2rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .conductor-img {
+            max-width: 50%;
+            margin-right: 2rem;
+        }
+        .conductor-img{
+                animation: floatImage 4s ease-in-out infinite;
+            }
+            @keyframes floatImage{
+            0%{
+                transform: translateY(0);
+            }
+            50%{
+                transform: translateY(-2.4rem);
+            }
+            100%{
+                transform: translateY(0);
+            }
+        }
+
+        form {
+            width: 100%;
+            max-width: 400px;
+            margin-left: auto;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 20px;
+            color: #000;
+        }
+
+        .input-group input , select{
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h3>TIcket Collector Fine</h3>
+  
+        <i class="bx bx-menu" id="menu_icon"></i>
+  
+        <nav class="navbar">
+          <a href="Home_page.html">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        
+    </header>
+
+    <div class="container">
+        <img src="pro_Conductor image.png" alt="Conductor" class="conductor-img">
+        <form id="generateFineForm">
+            <div class="input-group">
+                <label for="Station">Station</label>
+                <select name="Station" id="Station"> 
+                    <option value="selecting">Select station</option>    
+                      <option value="Dadar">Dadar</option>
+                      <option value="Churchgate">Churchgate</option>
+                      <option value="Malad">Malad</option>
+                      <option value="Andheri">Andheri</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="phone">Phone No:</label>
+                <input type="text" id="phone" name="phone" required>
+            </div>
+
+            <div class="input-group">
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="finetype">Fine Type : </label>
+                <select name="finetype" id="finetype"> 
+                    <option value="selecting">Select type of Fine</option>    
+                      <option value="TWT">Travel Without Ticket</option>
+                      <option value="NPT">No Platform Ticket</option>
+                      <option value="WT">Wrong Ticket</option>
+                      <option value="SPS">split on station</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="Amount">Amount:</label>
+                <input type="text" id="Amount" name="Amount" required>
+            </div>
+            <div class="input-group">
+                <label for="Fine">Fine Id:</label>
+                <input type="text" id="Fine" name="Fine" required>
+            </div>
+            <button type="submit">Conduct Fine</button>
+        </form>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const fineType = document.getElementById('finetype');
+    const amountInput = document.getElementById('Amount');
+    const fineid = document.getElementById('Fine');
+    let id = null;
+
+    fineType.addEventListener('change', function() {
+        const selectedValue = fineType.value;
+        switch (selectedValue) {
+            case 'TWT':
+                amountInput.value = '270'; 
+                break;
+            case 'NPT':
+                amountInput.value = '50'; 
+                break;
+            case 'WT':
+                amountInput.value = '100'; 
+                break;
+            case 'SPS':
+                amountInput.value = '150'; 
+                break;
+            default:
+                amountInput.value = ''; 
+                break;
+        }
+    });
+
+    window.onload = () => {
+        getRandomNumber(); // Call getRandomNumber function on window load
+        fineid.value = id;
+    };
+
+    function getRandomNumber() {
+        id = Math.floor(Math.random() * (100000 )) + 1;
+    }
+});
+
+    </script>
+</body>
+</html>

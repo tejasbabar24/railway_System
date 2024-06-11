@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="show_user_data.js"></script>
+    <title>Document</title>
+    <style>
+        /* Reset styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-color: #1f242d;
+            --second-bg-color: #323946;
+            --text-color: #fff;
+            --main-color: #0ef;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('vecteezy_bangladesh-padma-bridge-illustration_9262628.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 1rem;
+        }
+
+        html {
+            font-size: 62.5%;
+            overflow-x: hidden;
+        }
+
+        body {
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 0.9rem 9%;
+            background: var(--bg-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            transition: background-color 0.3s ease;
+        }
+
+        .header.sticky {
+            border-bottom: .1rem solid rgba(0, 0, 0, .2);
+        }
+
+        .header h3 {
+            font-size: 3.5rem;
+            color: var(--text-color);
+            font-weight: 600;
+            cursor: default;
+        }
+
+        .navbar a {
+            font-size: 1.7rem;
+            color: var(--text-color);
+            text-decoration: none;
+            margin-left: 1rem;
+            margin-right: 3rem;
+            border-bottom: 3px solid transparent; /* Set initial border color */
+            transition: border-color 0.3s ease, transform 0.3s ease; /* Add transform transition */
+        }
+
+        .navbar {
+            margin-right: 20rem;
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: var(--main-color);
+            border-color: var(--main-color);
+            transform: translateY(-10px); /* Move text up by 3 pixels on hover */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            max-width: 1200px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 5px;
+            padding: 2rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .conductor-img {
+            max-width: 100%;
+            margin-bottom: 2rem;
+        }
+        .conductor-img{
+            
+            animation: floatImage 4s ease-in-out infinite;
+        }
+        @keyframes floatImage{
+        0%{
+            transform: translateY(0);
+        }
+        50%{
+            transform: translateY(-2.4rem);
+        }
+        100%{
+            transform: translateY(0);
+        }
+        }
+
+        .additional-div {
+            margin-right: 10px;
+            width: 100%;
+            height: 30rem;
+            background-color: rgba(0, 0, 0, 0.3); /* Change the background color as desired */
+            border-radius: 5px;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: #fff; /* Text color */
+            text-align: center; /* Center the content horizontally */
+        }
+
+        form {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 20px;
+            color: #000;
+        }
+
+        .input-group input, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+        
+        table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
+
+
+tbody tr:hover {
+    background-color: #ddd;
+}
+
+        
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h3>User Fine Details</h3>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <img src="pro_Conductor image.png" alt="Conductor" class="conductor-img" height="400px">
+        
+        <div class="additional-div">
+            <table id="finedetails">
+                <thead>
+                    <tr>
+                        <th>Fine Id</th>
+                        <th>FineType</th>
+                        <th>Station</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Add rows here -->
+                </tbody>
+            </table>
+        </div>
+        
+        <form id="" class="form">
+            <div class="input-group">
+                <label for="Fine">Fine Id:</label>
+                <input type="text" id="Fine" name="Fine" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="phone">Station:</label>
+                <input type="text" id="phone" name="phone" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="finetype">Fine Type:</label>
+                <input type="text" id="finetype" name="finetype" required>
+            </div>
+
+            <div class="input-group">
+                <label for="Amount">Amount:</label>
+                <input type="text" id="Amount" name="Amount" required>
+            </div>
+
+            <button type="submit" class="sub">Pay Fine</button>
+        </form>
+    </div>
+    
+    <script>
+        const btn = document.querySelector('.sub');
+        btn.addEventListener('click', () => {
+            alert("Payment successful");
+        });
+    </script>
+</body>
+</html>
